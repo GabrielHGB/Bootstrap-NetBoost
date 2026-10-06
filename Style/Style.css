@@ -1,0 +1,8 @@
+
+/* Coloquei aqui para conseguir ter uma animação mais visual para o usuário */
+.nav-link{
+    transition: transform 0.3s ease;
+}
+.nav-link:hover {
+    transform: scale(1.05);
+}
