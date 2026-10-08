@@ -4,6 +4,10 @@ Projeto desenvolvido com HTML, CSS e Bootstrap com o objetivo de praticar os pri
 
 O projeto foi desenvolvido sem JavaScript.
 
+<p align="center">
+    <img src="./Img/MascoteRobôNetBoost.png" alt="Mascote NetBoost" width="250">
+</p>
+
 ---
 
 ## Estrutura do projeto
