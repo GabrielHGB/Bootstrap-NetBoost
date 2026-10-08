@@ -1,3 +1,32 @@
+/* Configurações gerais */
+
+html{
+    scroll-behavior: smooth;
+}
+
+body{
+    background-color: #ffffff;
+}
+
+
+/* Navbar */
+
+/* Cria a linha abaixo do item ativo */
+
+.nav-link.active{
+    position: relative;
+    font-weight: 600;
+}
+
+.nav-link.active::after{
+    content: "";
+    width: 100%;
+    height: 2px;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    background-color: var(--bs-primary);
+}
 
 /* Coloquei aqui para conseguir ter uma animação mais visual para o usuário */
 .nav-link{
@@ -5,4 +34,106 @@
 }
 .nav-link:hover {
     transform: scale(1.05);
+}
+
+/* Hero */
+
+.hero{
+    min-height: 80vh;
+    display: flex;
+    align-items: center;
+    background-color: #f8f9fa;
+}
+
+.hero-imagem{
+    width: 85%;
+    max-width: 500px;
+}
+
+
+/* Cards */
+
+/* Pequeno efeito visual complementar */
+.card{
+    transition: transform 0.2s ease;
+}
+
+.card:hover{
+    transform: translateY(-5px);
+}
+
+
+/* Modal sem JavaScript */
+
+/*
+    O modal permanece invisível por padrão.
+    Não usamos display:none para não conflitar com d-flex.
+*/
+.modal-css{
+    padding: 20px;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    background-color: rgba(0, 0, 0, 0.6);
+    transition: opacity 0.2s ease;
+}
+
+/* Quando o checkbox é marcado, o modal aparece */
+#modal-toggle:checked ~ .modal-css{
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+}
+
+.modal-conteudo{
+    width: 100%;
+    max-width: 500px;
+}
+
+
+/* Dashboard */
+
+/*
+    A sidebar usa Grid e Flex.
+    sticky-top mantém a lateral visível sem position absolute.
+*/
+.dashboard-sidebar{
+    align-self: flex-start;
+    min-height: 600px;
+}
+
+.dashboard-link{
+    color: #ffffff;
+    text-decoration: none;
+    padding: 10px;
+    border-radius: 6px;
+}
+
+.dashboard-link:hover{
+    color: #212529;
+    background-color: #ffffff;
+}
+
+
+/* Responsividade */
+
+@media (max-width: 991px){
+
+    .hero{
+        min-height: auto;
+        text-align: center;
+    }
+
+    .hero-imagem{
+        width: 65%;
+    }
+
+}
+
+@media (max-width: 575px){
+
+    .hero-imagem{
+        width: 80%;
+    }
+
 }

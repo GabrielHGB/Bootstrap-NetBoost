@@ -5,113 +5,691 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>NetBoost</title>
 
-    <!-- Estilos CSS -->
+    <!-- Bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+    <!-- CSS próprio -->
     <link href="./Style/Style.css" rel="stylesheet">
-    <!-- Não importei o JavaScript pois o exercício não permite -->
+
+    <!-- O JavaScript do Bootstrap não foi importado, pois o exercício não permite -->
 </head>
+
 <body>
-<header>
-    <nav class="navbar navbar-expand-md navbar-white bg-white">
-        <div class="container">
-            <!-- Logo do site -->
-            <a class="navbar-brand fw-bold" href="#">
-                NetBoost
-            </a>
-            <!-- Menu desktop -->
-            <div class="collapse d-md-block">
-                <ul class="navbar-nav d-flex flex-row gap-3">
-                    <li class="nav-item">
-                        <a class="nav-link active" href="#">
-                            Início
-                        </a>
-                    </li>
 
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">
-                            Como melhorar
-                        </a>
-                    </li>
+    <!-- ================= ETAPA 1 - NAVBAR ================= -->
 
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">
-                            Diagnóstico
-                        </a>
-                    </li>
-
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">
-                            Contato
-                        </a>
-                    </li>
-
-                </ul>
-            </div>
-            <!-- Menu mobile -->
-            <div class="d-flex d-md-none flex-column w-100 mt-3 text-center">
-                <ul class="navbar-nav d-flex flex-column">
-
-                    <li class="nav-item">
-                        <a class="nav-link active" href="#">
-                            Início
-                        </a>
-                    </li>
-
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">
-                            Como melhorar
-                        </a>
-                    </li>
-
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">
-                            Diagnóstico
-                        </a>
-                    </li>
-
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">
-                            Contato
-                        </a>
-                    </li>
-
-                </ul>
-            </div>
-        </div>
-    </nav>
-</header>
-<main>
-    <!-- Etapa 02 - Hero section -->
-        <section class="hero py-5 mt-2">
+    <header>
+        <!-- navbar-expand-md: navbar expandida a partir de md -->
+        <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
             <div class="container">
+
+                <!-- Marca do site -->
+                <a class="navbar-brand fw-bold text-primary" href="#">NetBoost</a>
+
+                <!--
+                    O collapse do Bootstrap normalmente depende de JavaScript.
+                    Como JS não é permitido, d-md-block mostra este menu no desktop
+                    e um segundo menu é utilizado no mobile.
+                -->
+                <div class="collapse d-md-block">
+                    <!-- flex-row: menu horizontal -->
+                    <ul class="navbar-nav d-flex flex-row gap-3">
+                        <li class="nav-item"><a class="nav-link active" href="#">Início</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#dicas">Como melhorar</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#comparativo">Comparativo</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#diagnostico">Diagnóstico</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#contato">Contato</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#dashboard">Dashboard</a></li>
+                    </ul>
+                </div>
+
+                <!-- d-md-none: aparece somente abaixo de md -->
+                <div class="d-flex d-md-none flex-column w-100 mt-3 text-center">
+                    <ul class="navbar-nav d-flex flex-column">
+                        <li class="nav-item"><a class="nav-link active" href="#">Início</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#dicas">Como melhorar</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#comparativo">Comparativo</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#diagnostico">Diagnóstico</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#contato">Contato</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#dashboard">Dashboard</a></li>
+                    </ul>
+                </div>
+
+            </div>
+        </nav>
+    </header>
+
+
+    <main>
+
+        <!-- ================= ETAPA 2 - HERO ================= -->
+
+        <section class="hero py-5">
+            <div class="container">
+
+                <!-- row cria a linha e align-items-center centraliza verticalmente -->
                 <div class="row align-items-center">
-                    <div class="col-12 col-lg-6">
-                        <h1 class="display-3 fw-bold">
-                            Sua internet pode ser melhor.
-                        </h1>
-                        <p class="lead">
-                            Descubra como melhorar sua conexão.
+
+                    <!-- Texto fica depois no mobile e primeiro no desktop -->
+                    <div class="col-12 col-lg-6 order-2 order-lg-1">
+                        <span class="badge text-bg-primary mb-3">NetBoost</span>
+
+                        <h1 class="display-3 fw-bold">Sua internet pode ser melhor.</h1>
+
+                        <p class="lead text-secondary">
+                            Aprenda como melhorar velocidade, estabilidade e alcance da sua conexão.
                         </p>
-                        <div class="d-flex flex-column flex-sm-row gap-3 mt-2">
-                              <a href="#dicas" class="btn btn-primary btn-lg">
-                                  Melhorar minha internet
-                              </a>
-                              <a href="#conteudo" class="btn btn-outline-primary btn-lg">
-                                  Ver dicas
-                              </a>
+
+                        <!-- Botões verticais no mobile e horizontais a partir de sm -->
+                        <div class="d-flex flex-column flex-sm-row gap-3 mt-4">
+                            <a href="#dicas" class="btn btn-primary btn-lg">Melhorar minha internet</a>
+                            <a href="#diagnostico" class="btn btn-outline-primary btn-lg">Fazer diagnóstico</a>
                         </div>
                     </div>
 
-                    <div class="col-12 col-lg-6">
-                        <img
-                            src="./Img/MascoteRobôNetBoost.png"
-                            class="img-fluid"
-                            alt="Ilustração sobre conexão de internet"
-                        >
+                    <!-- Imagem fica primeiro no mobile e depois no desktop -->
+                    <div class="col-12 col-lg-6 order-1 order-lg-2 text-center mb-4 mb-lg-0">
+                        <img src="./Img/MascoteRobôNetBoost.png" class="img-fluid hero-imagem" alt="Mascote da NetBoost">
                     </div>
+
                 </div>
             </div>
         </section>
+
+
+        <!-- ================= ETAPA 3 - 12 CARDS ================= -->
+
+        <section id="dicas" class="py-5 bg-light">
+            <div class="container">
+
+                <div class="text-center mb-5">
+                    <h2 class="fw-bold">Como melhorar sua internet</h2>
+                    <p class="text-secondary">Pequenas mudanças podem melhorar muito sua conexão.</p>
+                </div>
+
+                <!--
+                    g-4: espaço entre os cards.
+                    col-12: 1 coluna no mobile.
+                    col-md-6: 2 colunas no tablet.
+                    col-lg-3: 4 colunas no desktop.
+                -->
+                <div class="row g-4">
+
+                    <div class="col-12 col-md-6 col-lg-3">
+                        <article class="card h-100 d-flex flex-column shadow-sm">
+                            <div class="card-body d-flex flex-column">
+                                <span class="badge text-bg-primary align-self-start mb-3">Wi-Fi</span>
+                                <h3 class="h5 card-title">Posicione o roteador</h3>
+                                <p class="card-text">Mantenha o roteador em uma região central e livre de obstáculos.</p>
+                                <a href="#" class="btn btn-outline-primary mt-auto">Saiba mais</a>
+                            </div>
+                        </article>
+                    </div>
+
+                    <div class="col-12 col-md-6 col-lg-3">
+                        <article class="card h-100 d-flex flex-column shadow-sm">
+                            <div class="card-body d-flex flex-column">
+                                <span class="badge text-bg-success align-self-start mb-3">Velocidade</span>
+                                <h3 class="h5 card-title">Use 5 GHz</h3>
+                                <p class="card-text">A rede 5 GHz oferece maior velocidade quando você está perto do roteador.</p>
+                                <a href="#" class="btn btn-outline-success mt-auto">Saiba mais</a>
+                            </div>
+                        </article>
+                    </div>
+
+                    <div class="col-12 col-md-6 col-lg-3">
+                        <article class="card h-100 d-flex flex-column shadow-sm">
+                            <div class="card-body d-flex flex-column">
+                                <span class="badge text-bg-warning align-self-start mb-3">Cabo</span>
+                                <h3 class="h5 card-title">Use Ethernet</h3>
+                                <p class="card-text">Para computadores e consoles, o cabo pode oferecer uma conexão mais estável.</p>
+                                <a href="#" class="btn btn-outline-warning mt-auto">Saiba mais</a>
+                            </div>
+                        </article>
+                    </div>
+
+                    <div class="col-12 col-md-6 col-lg-3">
+                        <article class="card h-100 d-flex flex-column shadow-sm">
+                            <div class="card-body d-flex flex-column">
+                                <span class="badge text-bg-danger align-self-start mb-3">Manutenção</span>
+                                <h3 class="h5 card-title">Reinicie o roteador</h3>
+                                <p class="card-text">Uma reinicialização pode corrigir falhas temporárias de conexão.</p>
+                                <a href="#" class="btn btn-outline-danger mt-auto">Saiba mais</a>
+                            </div>
+                        </article>
+                    </div>
+
+                    <div class="col-12 col-md-6 col-lg-3">
+                        <article class="card h-100 d-flex flex-column shadow-sm">
+                            <div class="card-body d-flex flex-column">
+                                <span class="badge text-bg-info align-self-start mb-3">Atualização</span>
+                                <h3 class="h5 card-title">Atualize o roteador</h3>
+                                <p class="card-text">Verifique se o firmware do seu equipamento está atualizado.</p>
+                                <a href="#" class="btn btn-outline-primary mt-auto">Saiba mais</a>
+                            </div>
+                        </article>
+                    </div>
+
+                    <div class="col-12 col-md-6 col-lg-3">
+                        <article class="card h-100 d-flex flex-column shadow-sm">
+                            <div class="card-body d-flex flex-column">
+                                <span class="badge text-bg-secondary align-self-start mb-3">Dispositivos</span>
+                                <h3 class="h5 card-title">Controle os aparelhos</h3>
+                                <p class="card-text">Muitos dispositivos conectados ao mesmo tempo podem consumir sua banda.</p>
+                                <a href="#" class="btn btn-outline-secondary mt-auto">Saiba mais</a>
+                            </div>
+                        </article>
+                    </div>
+
+                    <div class="col-12 col-md-6 col-lg-3">
+                        <article class="card h-100 d-flex flex-column shadow-sm">
+                            <div class="card-body d-flex flex-column">
+                                <span class="badge text-bg-warning align-self-start mb-3">Interferência</span>
+                                <h3 class="h5 card-title">Evite obstáculos</h3>
+                                <p class="card-text">Paredes, móveis e outros aparelhos podem diminuir a qualidade do sinal.</p>
+                                <a href="#" class="btn btn-outline-warning mt-auto">Saiba mais</a>
+                            </div>
+                        </article>
+                    </div>
+
+                    <div class="col-12 col-md-6 col-lg-3">
+                        <article class="card h-100 d-flex flex-column shadow-sm">
+                            <div class="card-body d-flex flex-column">
+                                <span class="badge text-bg-primary align-self-start mb-3">Canal</span>
+                                <h3 class="h5 card-title">Troque o canal Wi-Fi</h3>
+                                <p class="card-text">Canais congestionados podem causar lentidão e instabilidade.</p>
+                                <a href="#" class="btn btn-outline-primary mt-auto">Saiba mais</a>
+                            </div>
+                        </article>
+                    </div>
+
+                    <div class="col-12 col-md-6 col-lg-3">
+                        <article class="card h-100 d-flex flex-column shadow-sm">
+                            <div class="card-body d-flex flex-column">
+                                <span class="badge text-bg-success align-self-start mb-3">Alcance</span>
+                                <h3 class="h5 card-title">Use Mesh</h3>
+                                <p class="card-text">Redes Mesh ajudam a distribuir o sinal em casas maiores.</p>
+                                <a href="#" class="btn btn-outline-success mt-auto">Saiba mais</a>
+                            </div>
+                        </article>
+                    </div>
+
+                    <div class="col-12 col-md-6 col-lg-3">
+                        <article class="card h-100 d-flex flex-column shadow-sm">
+                            <div class="card-body d-flex flex-column">
+                                <span class="badge text-bg-info align-self-start mb-3">Teste</span>
+                                <h3 class="h5 card-title">Teste sua velocidade</h3>
+                                <p class="card-text">Compare sua velocidade real com a velocidade contratada.</p>
+                                <a href="#" class="btn btn-outline-primary mt-auto">Saiba mais</a>
+                            </div>
+                        </article>
+                    </div>
+
+                    <div class="col-12 col-md-6 col-lg-3">
+                        <article class="card h-100 d-flex flex-column shadow-sm">
+                            <div class="card-body d-flex flex-column">
+                                <span class="badge text-bg-danger align-self-start mb-3">Latência</span>
+                                <h3 class="h5 card-title">Observe o ping</h3>
+                                <p class="card-text">Jogos e chamadas precisam de baixa latência para funcionar bem.</p>
+                                <a href="#" class="btn btn-outline-danger mt-auto">Saiba mais</a>
+                            </div>
+                        </article>
+                    </div>
+
+                    <div class="col-12 col-md-6 col-lg-3">
+                        <article class="card h-100 d-flex flex-column shadow-sm">
+                            <div class="card-body d-flex flex-column">
+                                <span class="badge text-bg-dark align-self-start mb-3">Plano</span>
+                                <h3 class="h5 card-title">Escolha o plano certo</h3>
+                                <p class="card-text">A quantidade de usuários deve ser considerada na escolha do plano.</p>
+                                <a href="#" class="btn btn-outline-dark mt-auto">Saiba mais</a>
+                            </div>
+                        </article>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+
+        <!-- ================= ETAPA 4 - TABELA ================= -->
+
+        <section id="comparativo" class="py-5">
+            <div class="container">
+
+                <div class="mb-4">
+                    <h2 class="fw-bold">Comparativo de conexões</h2>
+                    <p class="text-secondary">Veja características comuns de diferentes tipos de conexão.</p>
+                </div>
+
+                <!-- table-responsive impede que a tabela quebre o mobile -->
+                <div class="table-responsive">
+                    <table class="table table-striped table-hover align-middle">
+                        <thead class="table-dark">
+                            <tr>
+                                <th>Conexão</th>
+                                <th>Velocidade</th>
+                                <th>Estabilidade</th>
+                                <th>Latência</th>
+                                <th>Indicação</th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+                            <tr>
+                                <td><i class="bi bi-lightning-charge-fill text-warning me-2"></i>Fibra óptica</td>
+                                <td>Alta</td>
+                                <td><span class="badge text-bg-success">Excelente</span></td>
+                                <td>Baixa</td>
+                                <td>Jogos, streaming e trabalho</td>
+                            </tr>
+
+                            <tr>
+                                <td><i class="bi bi-router-fill text-primary me-2"></i>Cabo</td>
+                                <td>Alta</td>
+                                <td><span class="badge text-bg-success">Boa</span></td>
+                                <td>Baixa</td>
+                                <td>Uso residencial geral</td>
+                            </tr>
+
+                            <tr>
+                                <td><i class="bi bi-wifi text-info me-2"></i>Rádio</td>
+                                <td>Média</td>
+                                <td><span class="badge text-bg-warning">Média</span></td>
+                                <td>Média</td>
+                                <td>Regiões sem fibra</td>
+                            </tr>
+
+                            <tr>
+                                <td><i class="bi bi-broadcast-pin text-danger me-2"></i>4G / 5G</td>
+                                <td>Variável</td>
+                                <td><span class="badge text-bg-warning">Variável</span></td>
+                                <td>Média</td>
+                                <td>Mobilidade</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+            </div>
+        </section>
+
+
+        <!-- ================= ETAPA 5 - FORMULÁRIOS ================= -->
+
+        <section id="diagnostico" class="py-5 bg-light">
+            <div class="container">
+
+                <div class="mb-5">
+                    <h2 class="fw-bold">Cadastro para diagnóstico</h2>
+                    <p class="text-secondary">Preencha os dados para criar seu perfil de conexão.</p>
+                </div>
+
+                <form class="bg-white p-4 rounded shadow-sm">
+                    <!-- g-3 cria espaço entre os campos do Grid -->
+                    <div class="row g-3">
+
+                        <div class="col-12 col-md-6">
+                            <label for="nome" class="form-label">Nome</label>
+                            <input type="text" id="nome" class="form-control is-valid" value="Gabriel">
+                            <div class="valid-feedback">Nome preenchido.</div>
+                        </div>
+
+                        <div class="col-12 col-md-6">
+                            <label for="email" class="form-label">E-mail</label>
+                            <input type="email" id="email" class="form-control is-invalid">
+                            <div class="invalid-feedback">Informe um e-mail válido.</div>
+                        </div>
+
+                        <div class="col-12 col-md-6">
+                            <label for="senha" class="form-label">Senha</label>
+                            <input type="password" id="senha" class="form-control">
+                            <div class="form-text">Utilize pelo menos 8 caracteres.</div>
+                        </div>
+
+                        <div class="col-12 col-md-6">
+                            <label for="telefone" class="form-label">Telefone</label>
+
+                            <!-- Input Group -->
+                            <div class="input-group">
+                                <span class="input-group-text">+55</span>
+                                <input type="tel" id="telefone" class="form-control" placeholder="(31) 99999-9999">
+                            </div>
+                        </div>
+
+                        <div class="col-12 col-md-6">
+                            <label for="plano" class="form-label">Velocidade contratada</label>
+                            <select id="plano" class="form-select">
+                                <option selected>Selecione</option>
+                                <option>100 Mbps</option>
+                                <option>300 Mbps</option>
+                                <option>500 Mbps</option>
+                                <option>1 Gbps</option>
+                            </select>
+                        </div>
+
+                        <div class="col-12 col-md-6">
+                            <label for="data" class="form-label">Data do último teste</label>
+                            <input type="date" id="data" class="form-control">
+                        </div>
+
+                        <div class="col-12">
+                            <p class="mb-2">Principal uso da internet</p>
+
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="uso" id="trabalho">
+                                <label class="form-check-label" for="trabalho">Trabalho</label>
+                            </div>
+
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="uso" id="jogos">
+                                <label class="form-check-label" for="jogos">Jogos</label>
+                            </div>
+
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="uso" id="streaming">
+                                <label class="form-check-label" for="streaming">Streaming</label>
+                            </div>
+                        </div>
+
+                        <div class="col-12">
+                            <div class="form-check">
+                                <input type="checkbox" class="form-check-input" id="termos">
+                                <label class="form-check-label" for="termos">Aceito os termos de uso.</label>
+                            </div>
+                        </div>
+
+                        <div class="col-12">
+                            <button type="submit" class="btn btn-success">Criar cadastro</button>
+                        </div>
+
+                    </div>
+                </form>
+
+
+                <!-- FORMULÁRIO DE CONTATO -->
+
+                <div id="contato" class="mt-5 pt-5">
+                    <h2 class="fw-bold">Entre em contato</h2>
+                    <p class="text-secondary">Conte para nós qual problema você está enfrentando.</p>
+                </div>
+
+                <form class="bg-white p-4 rounded shadow-sm">
+                    <div class="row g-3">
+
+                        <div class="col-12 col-md-6">
+                            <label for="contatoNome" class="form-label">Nome</label>
+                            <input type="text" id="contatoNome" class="form-control">
+                        </div>
+
+                        <div class="col-12 col-md-6">
+                            <label for="contatoEmail" class="form-label">E-mail</label>
+                            <input type="email" id="contatoEmail" class="form-control">
+                        </div>
+
+                        <div class="col-12 col-md-6">
+                            <label for="assunto" class="form-label">Assunto</label>
+                            <select id="assunto" class="form-select">
+                                <option>Lentidão</option>
+                                <option>Wi-Fi</option>
+                                <option>Latência</option>
+                                <option>Outro</option>
+                            </select>
+                        </div>
+
+                        <div class="col-12 col-md-6">
+                            <label for="velocidade" class="form-label">Velocidade atual</label>
+                            <div class="input-group">
+                                <input type="number" id="velocidade" class="form-control">
+                                <span class="input-group-text">Mbps</span>
+                            </div>
+                        </div>
+
+                        <div class="col-12">
+                            <label for="mensagem" class="form-label">Mensagem</label>
+                            <textarea id="mensagem" class="form-control" rows="5"></textarea>
+                            <div class="form-text">Descreva quando o problema acontece e quais aparelhos são afetados.</div>
+                        </div>
+
+                        <div class="col-12">
+                            <button type="submit" class="btn btn-primary">Enviar mensagem</button>
+                        </div>
+
+                    </div>
+                </form>
+
+            </div>
+        </section>
+
+
+        <!-- ================= ETAPA 6 - MODAL SEM JS ================= -->
+
+        <section class="py-5">
+            <div class="container text-center">
+
+                <h2 class="fw-bold">Diagnóstico rápido</h2>
+                <p class="text-secondary">Este modal funciona apenas com HTML e CSS.</p>
+
+                <!-- Checkbox controla se o modal está aberto ou fechado -->
+                <input type="checkbox" id="modal-toggle" class="d-none">
+
+                <!-- O label altera o estado do checkbox -->
+                <label for="modal-toggle" class="btn btn-warning">
+                    Abrir diagnóstico
+                </label>
+
+                <!--
+                    position-fixed: ocupa posição fixa na tela.
+                    z-3: coloca o modal acima do conteúdo.
+                    d-flex: centraliza o conteúdo.
+                -->
+                <div class="modal-css position-fixed top-0 start-0 w-100 h-100 d-flex align-items-center justify-content-center z-3">
+                    <div class="modal-conteudo bg-white rounded-4 shadow p-4 text-start">
+
+                        <div class="d-flex justify-content-between align-items-center mb-3">
+                            <h3 class="h4 mb-0">Diagnóstico NetBoost</h3>
+                            <label for="modal-toggle" class="btn-close"></label>
+                        </div>
+
+                        <p>Sua conexão parece apresentar alguns pontos de atenção.</p>
+
+                        <div class="alert alert-warning">
+                            <i class="bi bi-exclamation-triangle-fill me-2"></i>
+                            Verifique a distância entre seu dispositivo e o roteador.
+                        </div>
+
+                        <div class="text-end">
+                            <label for="modal-toggle" class="btn btn-secondary">Fechar</label>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+
+        <!-- ================= ETAPA 7 - RESPONSIVIDADE ================= -->
+
+        <section class="py-5 bg-primary text-white">
+            <div class="container">
+
+                <!-- text-center no mobile e text-md-start a partir de md -->
+                <div class="row align-items-center text-center text-md-start">
+
+                    <div class="col-12 col-md-8">
+                        <h2>Experiência adaptada para cada tela</h2>
+
+                        <!-- Some completamente no mobile -->
+                        <p class="d-none d-sm-block mb-0">
+                            Este texto aparece apenas a partir do breakpoint sm.
+                        </p>
+
+                        <!-- Aparece apenas em telas maiores -->
+                        <small class="d-none d-lg-inline">
+                            No desktop também exibimos informações extras.
+                        </small>
+                    </div>
+
+                    <!-- Botão muda de posição pelo Grid -->
+                    <div class="col-12 col-md-4 mt-3 mt-md-0 d-md-flex justify-content-md-end">
+                        <a href="#dashboard" class="btn btn-light">Ver Dashboard</a>
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+
+
+        <!-- ================= ETAPA 8 - SISTEMA DE DESIGN ================= -->
+
+        <!--
+            5 cores Bootstrap:
+            bg-primary, bg-success, bg-danger, bg-warning, bg-info
+
+            4 variações de botão:
+            btn-primary, btn-success, btn-warning, btn-danger
+
+            Badges utilizadas:
+            text-bg-primary, text-bg-success, text-bg-warning, text-bg-danger
+        -->
+
+
+        <!-- ================= ETAPA 9 - DASHBOARD ================= -->
+
+        <section id="dashboard" class="py-5 bg-light">
+            <div class="container">
+
+                <div class="mb-4">
+                    <h2 class="fw-bold">Dashboard NetBoost</h2>
+                    <p class="text-secondary">Resumo da qualidade da sua conexão.</p>
+                </div>
+
+                <div class="row g-0 bg-white rounded shadow-sm overflow-hidden">
+
+                    <!--
+                        d-none: escondida por padrão.
+                        d-lg-flex: aparece como Flex a partir de lg.
+                        sticky-top mantém a sidebar visível no desktop.
+                    -->
+                    <aside class="col-lg-3 d-none d-lg-flex flex-column bg-dark text-white p-4 dashboard-sidebar sticky-top">
+                        <h3 class="h5 mb-4">NetBoost</h3>
+
+                        <nav class="d-flex flex-column gap-2">
+                            <a href="#" class="dashboard-link">Visão geral</a>
+                            <a href="#" class="dashboard-link">Velocidade</a>
+                            <a href="#" class="dashboard-link">Dispositivos</a>
+                            <a href="#" class="dashboard-link">Histórico</a>
+                        </nav>
+                    </aside>
+
+                    <div class="col-12 col-lg-9 p-4">
+
+                        <!-- Cards de métricas -->
+                        <div class="row g-3 mb-4">
+
+                            <div class="col-12 col-md-4">
+                                <div class="card h-100 border-primary">
+                                    <div class="card-body">
+                                        <p class="text-secondary mb-1">Download</p>
+                                        <h3 class="display-6">480 <small class="fs-6">Mbps</small></h3>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-12 col-md-4">
+                                <div class="card h-100 border-success">
+                                    <div class="card-body">
+                                        <p class="text-secondary mb-1">Upload</p>
+                                        <h3 class="display-6">210 <small class="fs-6">Mbps</small></h3>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-12 col-md-4">
+                                <div class="card h-100 border-warning">
+                                    <div class="card-body">
+                                        <p class="text-secondary mb-1">Ping</p>
+                                        <h3 class="display-6">18 <small class="fs-6">ms</small></h3>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <!-- Alerts -->
+                        <div class="alert alert-success">
+                            <i class="bi bi-check-circle-fill me-2"></i>
+                            Sua velocidade está próxima do plano contratado.
+                        </div>
+
+                        <div class="alert alert-warning">
+                            <i class="bi bi-exclamation-triangle-fill me-2"></i>
+                            Existem muitos dispositivos conectados neste momento.
+                        </div>
+
+                        <!-- Tabela do dashboard -->
+                        <div class="table-responsive mt-4">
+                            <table class="table table-hover align-middle">
+                                <thead class="table-light">
+                                    <tr>
+                                        <th>Dispositivo</th>
+                                        <th>Tipo</th>
+                                        <th>Status</th>
+                                        <th>Consumo</th>
+                                    </tr>
+                                </thead>
+
+                                <tbody>
+                                    <tr>
+                                        <td>Notebook</td>
+                                        <td><i class="bi bi-laptop me-2"></i>Wi-Fi</td>
+                                        <td><span class="badge text-bg-success">Online</span></td>
+                                        <td>85 Mbps</td>
+                                    </tr>
+
+                                    <tr>
+                                        <td>Smart TV</td>
+                                        <td><i class="bi bi-tv me-2"></i>Wi-Fi</td>
+                                        <td><span class="badge text-bg-success">Online</span></td>
+                                        <td>42 Mbps</td>
+                                    </tr>
+
+                                    <tr>
+                                        <td>Console</td>
+                                        <td><i class="bi bi-controller me-2"></i>Ethernet</td>
+                                        <td><span class="badge text-bg-success">Online</span></td>
+                                        <td>120 Mbps</td>
+                                    </tr>
+
+                                    <tr>
+                                        <td>Celular</td>
+                                        <td><i class="bi bi-phone me-2"></i>Wi-Fi</td>
+                                        <td><span class="badge text-bg-warning">Baixo sinal</span></td>
+                                        <td>15 Mbps</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
     </main>
+
+
+    <footer class="bg-dark text-white py-4">
+        <div class="container text-center">
+            <p class="mb-0">NetBoost — Melhore sua conexão.</p>
+        </div>
+    </footer>
+
 </body>
 </html>
